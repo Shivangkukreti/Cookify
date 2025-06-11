@@ -31,4 +31,4 @@ recipesch.post("findOneAndDelete", async function (data) {
 let recipe=mongoose.model("recipe",recipesch)
 module.exports=recipe;
 
-await recipes.create({ dish: "Chole Bhature", chef: "Shivang" });
+await recipe.create({ dish: "Chole Bhature", chef: "Shivang" });
