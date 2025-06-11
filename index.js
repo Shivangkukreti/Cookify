@@ -24,7 +24,7 @@ let uri=process.env.uri
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 const store=mongostore.create({mongoUrl:uri,secret:"abc",touchAfter:24*3600})
-app.use(session({secret:'abc',saveUninitialized:true,resave:false,cookie:{}}))
+app.use(session({store,secret:'abc',saveUninitialized:true,resave:false,cookie:{}}))
 app.use(flash());
 app.use(passport.initialize())
 app.use(passport.session())
