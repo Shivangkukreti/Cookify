@@ -14,6 +14,11 @@ const localstrategy=require('passport-local').Strategy
 const multer = require('multer');  
 const {storage} = require('./cloud');
 const upload = multer({ storage });
+const mongoose = require('mongoose');
+let uri=process.env.uri
+mongoose.connect(uri)
+    .then(() => console.log("MongoDB connected"))
+    .catch(err => console.log("MongoDB ERROR →", err));
 
 
 
@@ -21,7 +26,7 @@ const upload = multer({ storage });
 const recipes=require("./models/recipe")
 const user=require("./models/user");
 const reviews=require("./models/review");
-let uri=process.env.uri
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
