@@ -1,0 +1,33 @@
+<%- include("./include/headfile.ejs") %>
+<%- include("./include/navbar.ejs") %>
+<%- include("./include/flash.ejs") %>
+
+ 
+<form style="display: flex;flex-direction: column;align-items: center;" novalidate class="container mt-5 needs-validation"   method="post">
+<H2 style="text-align: center;">LOG IN</H2>
+
+ <label style="min-width: 225px;" class="form-label col-5 ">USERNAME
+        <input type="text" class="form-control"  required  name="username">
+        <div class="invalid-feedback">Enter Username</div>
+    </label>
+    
+    <label style="min-width: 225px;" class="form-label col-5 ">PASSWORD
+        <input type="password" class="form-control" placeholder="password" required  name="password">
+        <div class="invalid-feedback">Enter Password</div>
+    </label>
+
+    
+
+   
+    <button style="min-width: 70px;" class="btn btn-outline-dark col-2 ">ADD</button>
+</form>
+
+
+
+
+
+
+
+ <script src="/code.js"></script>
+</body>
+</html>

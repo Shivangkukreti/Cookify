@@ -1,0 +1,29 @@
+<%- include("./include/headfile.ejs") %>
+<%- include("./include/navbar.ejs") %>
+
+ 
+<form style="display: flex;flex-direction: column;align-items: center;" novalidate action="/cookify/<%= any.id %>/edit?_method=PUT" class="container mt-5 needs-validation" enctype="multipart/form-data"  method="post">
+<H2 style="text-align: center;">EDIT RECIPE</H2>
+ <label style="min-width: 225px;" class="form-label col-5 ">DISH
+        <input type="text" class="form-control" value="<%= any.dish %>" required  name="dish">
+        <div class="invalid-feedback">Enter DISH</div>
+    </label>
+
+    <label style="min-width: 225px;" class="form-label col-7 " for="description">RECIPE
+    <textarea type="text" class="form-control" placeholder="recipe" required  name="recipe"><%= any.recipe %></textarea>
+    <div class="invalid-feedback">Enter RECIPE</div>
+    </label>
+
+    <label style="min-width: 225px;" class="form-label col-5 ">IMAGE
+        <input type="file" class="form-control"    name="img">
+    </label>
+
+    <button class="btn btn-outline-dark col-2 ">EDIT</button>
+</form>
+
+
+
+
+ <script src="/code.js"></script>
+</body>
+</html>

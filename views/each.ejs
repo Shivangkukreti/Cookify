@@ -1,0 +1,72 @@
+<%- include("./include/headfile.ejs") %>
+<%- include("./include/navbar.ejs") %>
+<%- include("./include/flash.ejs") %>
+
+<% if (currentuser && currentuser.username==any.chef) { %>
+ <div>
+       <form style="display: inline;" action="/cookify/<%= any.id %>?_method=DELETE" method="post">
+        <button class="btn btn-outline-dark">DELETE</button>
+       </form>
+       <a class="btn btn-outline-dark" href="/cookify/<%= any.id %>/edit">EDIT</a>
+
+    </div>
+<% } %>
+ 
+
+    <div style="width: 99vw;" class="row mt-2">     
+     <div class="card" style="width:80vw;margin-left:12%;padding: 1%;box-shadow: 5px 5px 20px gray;">
+  <img  src="<%= any.img %>" class="card-img-top" style="height: 80vh;object-fit: contain;" alt="...">
+  <div class="card-body">
+    <h3 style="text-align: center;" class="card-title"><%= any.dish %></h3>
+    <h6 style="text-align: center;">BY--- <%= any.chef %></h6><br><br><hr>
+    <h3 id="fontcon" style="text-align: center;">-----RECIPE-----</h3>
+<p><%= any.recipe %></p>
+  </div>
+</div> 
+
+<div class="card mt-2" style="width:80vw;margin-left:12%;padding: 1%;box-shadow: 5px 5px 20px gray;">
+ <h3 id="fontcon" style="text-align: center;">-----REVIEWS-----</h3>
+
+ <form novalidate class="needs-validation" style="display: flex;flex-direction: column;align-items: center;" action="/cookify/<%= any.id %>/addreviews" method="post">
+  <label class="form-label col-10 " >REVIEWS
+    <textarea type="text" class="form-control"  required  name="comment"></textarea>
+    <div class="invalid-feedback">Enter REVIEWS</div>
+    </label>
+    <button style="min-width: 60px;" class="btn btn-outline-dark col-1 ">ADD</button>
+ </form>
+<hr>
+ <div class="row" style="width: 99%;margin-left: 1%;">
+  <% for( let anyreview of any.review) { %>
+  <div class="card col-lg-4 col-md-4 col-sm-6" >
+  <div class="card-body">
+    <h5 class="card-title"><%= anyreview.username %></h5>
+    <p class="card-text"><%= anyreview.comment %></p>
+<form style="display: inline;"action="/cookify/<%= any.id %>/<%= anyreview.id %>/deletereviews?_method=DELETE" method="post">
+        <button  class="btn btn-outline-dark">DELETE</button>
+       </form>
+  </div>
+</div>
+  <% } %>
+ </div>
+ 
+</div>
+
+
+
+
+
+    </div>
+
+<script src="/code.js"></script>
+</body>
+</html>
+
+
+<style>
+@media (max-width:450px) {
+  #fontcon{
+    font-size: 15px;
+  }
+}
+
+</style>

@@ -1,0 +1,49 @@
+<%- include("./include/headfile.ejs") %>
+<%- include("./include/navbar.ejs") %>
+
+
+
+<div id="landbox" style="width: 98%;height: 70vh;background-color: rgb(128, 128, 128,0.5);margin-left: 1%;margin-top: 7vh;
+display: flex;justify-content:space-evenly;align-items: center;border-radius: 30px;box-shadow: 5px 5px 15px 1px black;">
+    <div class="landboxin" style="background-color: red;border-radius: 30px;height: 95%;background-size: cover ;width: 47%;background-image: url(https://images.unsplash.com/photo-1653233797467-1a528819fd4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);"></div>
+
+
+    <div class="landboxin" style="background-color: rgb(250, 235, 215,0.6);height: 95%;width: 47%;display: flex;align-items: center;border-radius: 30px;">
+        <p style="text-align: center;text-shadow: 5px 5px 5px;line-break: normal;font-size: larger;">
+            Lorem ipsum dolor sit, amet consect Lorem ipsum dolor sit amet consectetur 
+            adipisicing elit. Itaqlores obcaecati quod hic deleniti iste, assumenda sed expedita 
+            asperiores commodi? e molestias aspernatur iusto adipisci autem. Soluta non dicta quasi 
+            quia sed hic voluptas iure adipisci?etur adipisicing elit. Quibusdam dolores dolore iusto
+             minus veritatis, eveniet sequi veniam quo architecto blanditiis eaque, aperiam, perspiciatis
+            ipsum cum? Quae magnam ipsam natus ut.
+        </p>
+    </div>
+</div>
+
+<div style="display: flex;justify-content: center; margin: 1%;">
+<a  class="btn btn-outline-dark" href="/cookify">LET'S COOKIFY</a>
+</div>
+
+
+
+<script src="/code.js"></script>
+</body >
+</html>
+
+
+<style>
+    @media (max-width:800px) {
+        #landbox{
+            flex-direction: column;
+            width: 90% !important;
+            margin-left: 5% !important;
+            height: 70vh !important;
+        }
+
+        .landboxin{
+            margin: 2% 0%;
+            width: 80%!important;
+            font-size:9px;
+        }
+    }
+</style>

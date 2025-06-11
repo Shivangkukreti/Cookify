@@ -1,0 +1,8 @@
+.nav-link{
+    font-weight: 600;
+    color: black;
+}
+
+.nav-link:hover{
+    font-size: large;
+}

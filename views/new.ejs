@@ -1,0 +1,33 @@
+<%- include("./include/headfile.ejs") %>
+<%- include("./include/navbar.ejs") %>
+
+ 
+<form style="display: flex;flex-direction: column;align-items: center;" novalidate class="container mt-5 needs-validation"  enctype="multipart/form-data"  method="post">
+<H2 style="text-align: center;">NEW RECIPE</H2>
+ <label style="min-width: 225px;" class="form-label col-5 ">DISH
+        <input type="text" class="form-control" placeholder="dish" required  name="dish">
+        <div class="invalid-feedback">Enter DISH</div>
+    </label>
+
+    <label style="min-width: 225px;" class="form-label col-7 " for="description">RECIPE
+    <textarea type="text" class="form-control" placeholder="recipe" required  name="recipe"></textarea>
+    <div class="invalid-feedback">Enter RECIPE</div>
+    </label>
+
+    <label style="min-width: 225px;" class="form-label col-5 ">IMAGE
+        <input type="file" class="form-control"   name="img">
+        <div class="invalid-feedback">Enter IMAGE</div>
+    </label>
+
+    <button style="min-width: 70px;" class="btn btn-outline-dark col-2">ADD</button>
+</form>
+
+
+
+
+
+
+
+ <script src="/code.js"></script>
+</body>
+</html>

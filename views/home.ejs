@@ -1,0 +1,24 @@
+<%- include("./include/headfile.ejs") %>
+<%- include("./include/navbar.ejs") %>
+<%- include("./include/flash.ejs") %>
+
+<div style="display:flex ;justify-content: center;align-items: center;">
+
+    <div class="row" style="width: 98vw;">
+       <% for( let any of all ) { %>
+     <div class="card mt-3 col-lg-3 col-md-4 col-sm-6" style="box-shadow: 5px 5px 20px gray;padding: 0.5% 1.5%;border:none;">
+  <img style="box-shadow: 5px 5px 15px black;height: 45vh; " src="<%= any.img %>" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h4 class="card-title"><%= any.dish %></h4>
+    <p>By--<%= any.chef %></p>
+    <a href="/cookify/<%= any.id %>" class="btn btn-outline-dark">Recipe</a>
+  </div>
+</div>
+    <% } %> 
+    </div>
+
+</div>
+
+    
+</body>
+</html>
