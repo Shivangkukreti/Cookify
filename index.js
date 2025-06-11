@@ -5,6 +5,7 @@ require('dotenv').config()
 const port = 3000;
 const path = require('path');
 const methodOverride = require('method-override')
+const mongostore=require('connect-mongo')
 const session=require('express-session')
 const cookieparser=require('cookie-parser')
 const flash=require('connect-flash')
@@ -14,15 +15,15 @@ const multer = require('multer');
 const {storage} = require('./cloud');
 const upload = multer({ storage });
 
+
 const recipes=require("./models/recipe")
 const user=require("./models/user");
 const reviews=require("./models/review");
-
+let uri=process.env.uri
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-
+const store=mongostore.create({mongoUrl:uri,secret:"abc",touchAfter:24*3600})
 app.use(session({secret:'abc',saveUninitialized:true,resave:false,cookie:{}}))
 app.use(flash());
 app.use(passport.initialize())
